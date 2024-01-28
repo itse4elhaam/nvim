@@ -16,6 +16,8 @@ vim.api.nvim_set_keymap('n', '<C-c>', ':close<CR>', {
 })
 
 vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
+-- keymap to view today's time spent coding
+vim.api.nvim_set_keymap("n", "<leader>wt", ":WakaTimeToday<CR>", {})
 -- Map <Leader>t to open a new terminal window
 vim.api.nvim_set_keymap('n', '<Leader>t', ':term<CR>', {
     noremap = true,
@@ -32,18 +34,8 @@ vim.api.nvim_set_keymap('n', 'sl', '_', {
     silent = true
 })
 
--- Set cursor to underscore in normal mode
-vim.api.nvim_win_set_option(0, 'cursorline', true)
-vim.api.nvim_win_set_option(0, 'cursorcolumn', false)
-vim.api.nvim_win_set_option(0, 'signcolumn', 'no')
-
--- to comment using the vs code bind: 
-vim.keymap.set("n", "<C-_>", function()
-    require('Comment.api').toggle.linewise.current()
-end, {
-    noremap = true,
-    silent = true
-})
+-- Set cursor styles using Vimscript command
+vim.cmd("set guicursor=")
 
 -- to make sure neovim ignores some of the files that are not req
 vim.cmd([[
@@ -54,22 +46,22 @@ vim.cmd([[
       \ ]
 ]])
 
--- -- harpoon
--- vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
--- vim.keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
--- vim.keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev)
--- utils.map('n', [[<leader>hm]], ':Telescope harpoon marks<CR>')
-
--- -- Harpoon Which-key mappings
--- wk.register({
---     -- The first key you are pressing
---     h = {
---         name = "harpoon",
---         -- the second key
---         x = {function()
---             require('harpoon.mark').add_file()
---         end, "Mark file"}
---     }
--- }, {
---     prefix = "<leader>"
--- })
+-- harpoon
+--vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
+--vim.keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
+--vim.keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev)
+--utils.map('n', [[<leader>hm]], ':Telescope harpoon marks<CR>')
+--
+---- Harpoon Which-key mappings
+--wk.register({
+--    -- The first key you are pressing
+--    h = {
+--        name = "harpoon",
+--        -- the second key
+--        x = {function()
+--            require('harpoon.mark').add_file()
+--        end, "Mark file"}
+--    }
+--}, {
+--    prefix = "<leader>"
+--})
