@@ -10,6 +10,3 @@ vim.opt.rtp:prepend(lazypath)
 -- this loads all of the plugins in the plugins folder 
 require("vim-keymaps")
 require("lazy").setup("plugins")
-
-
-

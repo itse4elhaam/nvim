@@ -14,7 +14,6 @@ vim.api.nvim_set_keymap('n', '<C-c>', ':close<CR>', {
     noremap = true,
     silent = true
 })
-
 vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
 -- keymap to view today's time spent coding
 vim.api.nvim_set_keymap("n", "<leader>wt", ":WakaTimeToday<CR>", {})
