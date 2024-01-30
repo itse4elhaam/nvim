@@ -39,7 +39,6 @@ return {{
         vim.keymap.set('n', '<space>wl', function()
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, opts)
-
     end
 
 }}

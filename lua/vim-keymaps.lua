@@ -10,31 +10,31 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 -- keymaps for me:
 -- just a keymap for closing stuff
-vim.api.nvim_set_keymap('n', '<C-c>', ':close<CR>', {
-    noremap = true,
-    silent = true
+vim.api.nvim_set_keymap("n", "<C-c>", ":close<CR>", {
+	noremap = true,
+	silent = true,
 })
 vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
 -- keymap to view today's time spent coding
 vim.api.nvim_set_keymap("n", "<leader>wt", ":WakaTimeToday<CR>", {})
 -- Map <Leader>t to open a new terminal window
-vim.api.nvim_set_keymap('n', '<Leader>t', ':term<CR>', {
-    noremap = true,
-    silent = true
+vim.api.nvim_set_keymap("n", "<Leader>t", ":term<CR>", {
+	noremap = true,
+	silent = true,
 })
 -- Map 'el' to move cursor to the end of the line
-vim.api.nvim_set_keymap('n', 'el', '$', {
-    noremap = true,
-    silent = true
+vim.api.nvim_set_keymap("n", "el", "$", {
+	noremap = true,
+	silent = true,
 })
 -- Map 'sl' to move cursor to the start of the line
-vim.api.nvim_set_keymap('n', 'sl', '_', {
-    noremap = true,
-    silent = true
+vim.api.nvim_set_keymap("n", "sl", "_", {
+	noremap = true,
+	silent = true,
 })
 
 -- Set cursor styles using Vimscript command
-vim.cmd("set guicursor=")
+-- vim.cmd("set guicursor=")
 
 -- to make sure neovim ignores some of the files that are not req
 vim.cmd([[
