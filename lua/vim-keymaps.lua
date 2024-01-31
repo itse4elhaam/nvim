@@ -44,7 +44,11 @@ vim.cmd([[
       \ '__pycache__',
       \ ]
 ]])
-
+vim.keymap.set("n", "Y", "y$", {})
+-- for handling buffers:
+vim.api.nvim_set_keymap("n", "<leader>bw", ":bd!<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>h", ":bprevious<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>l", ":bnext<CR>", {})
 -- harpoon
 --vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
 --vim.keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
@@ -64,3 +68,8 @@ vim.cmd([[
 --}, {
 --    prefix = "<leader>"
 --})
+-- this is for yank highlighting:
+-- vim.cmd([[augroup highlight_yank
+--     autocmd!
+--     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
+-- augroup END]])
