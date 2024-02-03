@@ -4,6 +4,7 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set foldmethod=manual")
 vim.cmd("set foldcolumn=1")
+vim.cmd("set clipboard+=unnamedplus")
 vim.g.mapleader = " "
 vim.opt.signcolumn = "number"
 vim.opt.number = true
