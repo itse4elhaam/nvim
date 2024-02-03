@@ -10,7 +10,8 @@ return {{
             -- ensure_installed = {"lua_ls", "javascript", "pyright", "pylsp", "clangd", "bashls", "astro", "cssls",
             --                     "eslint", "gopls", "golangci_lint_ls", "html", "htmx", "graphql", "jsonls", "tsserver",
             --                     "quick_lint_js", "sqlls", "rust_analyzer", "tailwindcss", "zls"}
-            ensure_installed = {"lua_ls", "tsserver", "clangd", "bashls", "jsonls", "html", "tailwindcss", "quick_lint_js", "cssls"}
+            ensure_installed = {"lua_ls", "tsserver", "clangd", "bashls", "jsonls", "html", "tailwindcss",
+                                "quick_lint_js", "cssls"}
 
         })
     end
@@ -18,7 +19,7 @@ return {{
 }, {
     "neovim/nvim-lspconfig",
     config = function()
-        local capabilities = require("cmp_nvim_lsp").default_capabilities() 
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
         local lspconfig = require('lspconfig')
         lspconfig.lua_ls.setup({})
         lspconfig.tsserver.setup({})
@@ -28,6 +29,14 @@ return {{
         lspconfig.html.setup({})
         lspconfig.tailwindcss.setup({})
         lspconfig.quick_lint_js.setup({})
+        local cmp_nvim_lsp = require "cmp_nvim_lsp"
+
+        lspconfig.clangd.setup {
+            on_attach = on_attach,
+            capabilities = cmp_nvim_lsp.default_capabilities(),
+            cmd = {"clangd", "--offset-encoding=utf-16"}
+        }
+
         vim.keymap.set('n', 'DC', vim.lsp.buf.hover, {})
         vim.keymap.set('n', 'GD', vim.lsp.buf.definition, {})
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
