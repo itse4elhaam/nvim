@@ -15,6 +15,10 @@ vim.api.nvim_set_keymap("n", "<C-c>", ":close<CR>", {
 	noremap = true,
 	silent = true,
 })
+vim.api.nvim_set_keymap("n", "<leader>ya", ":w! | %y<CR>", {
+    noremap = true,
+    silent = true,
+})
 vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
 -- keymap to view today's time spent coding
 vim.api.nvim_set_keymap("n", "<leader>wt", ":WakaTimeToday<CR>", {})
@@ -30,6 +34,10 @@ vim.api.nvim_set_keymap("n", "el", "$", {
 })
 -- Map 'sl' to move cursor to the start of the line
 vim.api.nvim_set_keymap("n", "sl", "_", {
+	noremap = true,
+	silent = true,
+})
+vim.api.nvim_set_keymap("n", "Y", "y$", {
 	noremap = true,
 	silent = true,
 })
