@@ -40,7 +40,6 @@ return {
         }
     end,
     config = function()
-        require('mini.animate').setup()
+        require("mini.animate").setup()
     end
-
 }
