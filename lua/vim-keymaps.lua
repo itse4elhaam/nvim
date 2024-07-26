@@ -58,27 +58,3 @@ vim.keymap.set("n", "Y", "y$", {})
 vim.api.nvim_set_keymap("n", "<leader>bw", ":bd!<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>h", ":bprevious<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>l", ":bnext<CR>", {})
--- harpoon
---vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file)
---vim.keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next)
---vim.keymap.set('n', '<leader>hp', require('harpoon.ui').nav_prev)
---utils.map('n', [[<leader>hm]], ':Telescope harpoon marks<CR>')
---
----- Harpoon Which-key mappings
---wk.register({
---    -- The first key you are pressing
---    h = {
---        name = "harpoon",
---        -- the second key
---        x = {function()
---            require('harpoon.mark').add_file()
---        end, "Mark file"}
---    }
---}, {
---    prefix = "<leader>"
---})
--- this is for yank highlighting:
--- vim.cmd([[augroup highlight_yank
---     autocmd!
---     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
--- augroup END]])
